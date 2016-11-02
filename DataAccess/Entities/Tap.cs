@@ -13,17 +13,7 @@ namespace DataAccess
     {
         [Key]
         public int Id { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string Name { get; set; }
-
-        //[StringLength(50)]
-        //public string Description { get; set; }
-        public int Content { get; set; }
-        public int MaxContent { get; set; }
-        //public string UnitOfMeasurement { get; set; }
+        public string Location { get; set; }
         public int OfficeId { get; set; }
-        public string TapState { get; set; }
     }
 }
