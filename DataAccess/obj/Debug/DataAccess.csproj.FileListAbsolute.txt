@@ -24,3 +24,9 @@ C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerT
 C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\bin\Debug\EntityFramework.xml
 C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.Add_Fix_Entities.resources
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.Add_Fix_KegEntity.resources
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.Add_FixTapEntity.resources
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.Add_PopulateTaps.resources
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.Add_ModifyTapEntity.resources
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.Add_TapIdOnKegs.resources

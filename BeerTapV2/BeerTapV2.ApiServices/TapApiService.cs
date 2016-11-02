@@ -20,7 +20,7 @@ namespace BeerTapV2.ApiServices
             return Task.FromResult(new TapModel()
             {
                 Id = tap.Id,
-                Location = tap.Location,
+                Name = tap.Name,
                 OfficeId = tap.OfficeId
             });
         }
@@ -35,7 +35,7 @@ namespace BeerTapV2.ApiServices
                 tapModels.Add(new TapModel()
                 {
                     Id = tap.Id,
-                    Location = tap.Location,
+                    Name = tap.Name,
                     OfficeId = tap.OfficeId
                 });
             }

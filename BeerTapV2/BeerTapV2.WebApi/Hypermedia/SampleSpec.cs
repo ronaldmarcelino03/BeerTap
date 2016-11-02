@@ -7,7 +7,7 @@ namespace BeerTapV2.WebApi.Hypermedia
     public class SampleSpec : SingleStateResourceSpec<SampleResource, string>
     {
 
-        //public static ResourceUriTemplate Uri = ResourceUriTemplate.Create("SampleResources({id})");
+        //public static ResourceUriTemplate UriTapAtOffice = ResourceUriTemplate.Create("SampleResources({id})");
 
         //public override string EntrypointRelation
         //{
@@ -27,7 +27,7 @@ namespace BeerTapV2.WebApi.Hypermedia
         //            {
         //                Links =
         //                {
-        //                    CreateLinkTemplate(LinkRelations.SampleResource2, OrganizationSpec2.Uri, r => r.Id),
+        //                    CreateLinkTemplate(LinkRelations.SampleResource2, OrganizationSpec2.UriTapAtOffice, r => r.Id),
         //                },
 
         //                Operations =

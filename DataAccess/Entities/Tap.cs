@@ -13,7 +13,8 @@ namespace DataAccess
     {
         [Key]
         public int Id { get; set; }
-        public string Location { get; set; }
+        public string Name { get; set; }
         public int OfficeId { get; set; }
+        public int KegId { get; set; }
     }
 }

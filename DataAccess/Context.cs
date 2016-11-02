@@ -16,5 +16,6 @@ namespace DataAccess
 
         public DbSet<Tap> Taps { get; set; }
         public DbSet<Office> Offices { get; set; }
+        public DbSet<Keg> Kegs { get; set; }
     }
 }

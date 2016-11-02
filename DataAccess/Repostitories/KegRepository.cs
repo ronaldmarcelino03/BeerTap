@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,29 +10,59 @@ namespace DataAccess.Repostitories
 {
     public class KegRepository : IKegRepository
     {
-        public void Dispose()
+        private Context _context;
+        private bool _disposed;
+
+        public KegRepository()
         {
-            throw new NotImplementedException();
+            _context = new Context();
         }
 
         public IEnumerable<Keg> GetKegs()
         {
-            throw new NotImplementedException();
+            return _context.Kegs.AsEnumerable();
         }
 
         public Keg GetKegById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Kegs.FirstOrDefault(c => c.Id == id);
         }
-
-        public void Update()
+        
+        public void Update(Keg keg)
         {
-            throw new NotImplementedException();
+            _context.Kegs.AddOrUpdate(new Keg()
+            {
+                Id = keg.Id,
+                Name = keg.Name,
+                Content = keg.Content,
+                MaxContent = keg.MaxContent,
+                UnitOfMeasurement = keg.UnitOfMeasurement,
+                KegState = keg.KegState
+            });
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+
+            _disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

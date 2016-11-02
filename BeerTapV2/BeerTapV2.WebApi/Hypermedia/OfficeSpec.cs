@@ -32,7 +32,7 @@ namespace BeerTapV2.WebApi.Hypermedia
                     {
                         Links =
                         {
-                            CreateLinkTemplate(LinkRelations.Office, Uri, _ => _.Id)
+                            CreateLinkTemplate(LinkRelations.Tap, TapSpec.UriTapAtOffice, _ => _.Id)
                         },
                         Operations = new StateSpecOperationsSource<OfficeModel, int>
                         {

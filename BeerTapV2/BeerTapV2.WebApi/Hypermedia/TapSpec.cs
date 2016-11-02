@@ -12,11 +12,19 @@ namespace BeerTapV2.WebApi.Hypermedia
     public class TapSpec : SingleStateResourceSpec<TapModel, int>
     {
 
-        public static ResourceUriTemplate UriTapAtOffice = ResourceUriTemplate.Create("Offices({OfficeId})/Taps({id})");
+        //public static ResourceUriTemplate UriTapAtOffice = ResourceUriTemplate.Create("Offices({OfficeId})/Taps({id})");
+        public static ResourceUriTemplate UriTapAtOffice = ResourceUriTemplate.Create("Offices({OfficeId})/Taps");
 
         public override string EntrypointRelation
         {
             get { return LinkRelations.Tap; }
+        }
+
+        protected override IEnumerable<ResourceLinkTemplate<TapModel>> Links()
+        {
+            //yield return CreateLinkTemplate(CommonLinkRelations.Self, UriTapAtOffice, c => c.OfficeId, c => c.Id);
+            yield return CreateLinkTemplate(CommonLinkRelations.Self, UriTapAtOffice, c => c.OfficeId);
+
         }
 
         public override IResourceStateSpec<TapModel, NullState, int> StateSpec
@@ -28,7 +36,7 @@ namespace BeerTapV2.WebApi.Hypermedia
                     {
                         Links =
                         {
-                            CreateLinkTemplate(LinkRelations.Office, OfficeSpec.Uri, c => c.OfficeId)
+                            CreateLinkTemplate(LinkRelations.Keg, KegSpec.UriTapOfKegAtOffice, c => c.Id, c => c.KegId)
                         },
                         Operations = new StateSpecOperationsSource<TapModel, int>
                         {
@@ -49,7 +57,7 @@ namespace BeerTapV2.WebApi.Hypermedia
         //    {
         //        Links =
         //        {
-        //            CreateLinkTemplate(LinkRelations.Taps.GetAllYouWant, TapSpec.UriTapAtOffice.Many, _ => _.Id)
+        //            CreateLinkTemplate(LinkRelations.Kegs.GetAllYouWant, TapSpec.UriTapAtOffice.Many, _ => _.Id)
         //        },
         //        Operations = new StateSpecOperationsSource<TapModel, int>()
         //        {
@@ -66,7 +74,7 @@ namespace BeerTapV2.WebApi.Hypermedia
         //    {
         //        Links =
         //        {
-        //            CreateLinkTemplate(LinkRelations.Taps.GetSomeMore, TapSpec.UriTapAtOffice.Many, _ => _.Id)
+        //            CreateLinkTemplate(LinkRelations.Kegs.GetSomeMore, TapSpec.UriTapAtOffice.Many, _ => _.Id)
         //        },
         //        Operations = new StateSpecOperationsSource<TapModel, int>()
         //        {
@@ -83,7 +91,7 @@ namespace BeerTapV2.WebApi.Hypermedia
         //    {
         //        Links =
         //        {
-        //            CreateLinkTemplate(LinkRelations.Taps.GetWhatIsLeft, TapSpec.UriTapAtOffice.Many, _ => _.Id)
+        //            CreateLinkTemplate(LinkRelations.Kegs.GetWhatIsLeft, TapSpec.UriTapAtOffice.Many, _ => _.Id)
         //        },
         //        Operations = new StateSpecOperationsSource<TapModel, int>()
         //        {
@@ -100,7 +108,7 @@ namespace BeerTapV2.WebApi.Hypermedia
         //    {
         //        Links =
         //        {
-        //            CreateLinkTemplate(LinkRelations.Taps.ReplaceKeg, TapSpec.UriTapAtOffice.Many, _ => _.Id)
+        //            CreateLinkTemplate(LinkRelations.Kegs.ReplaceKeg, TapSpec.UriTapAtOffice.Many, _ => _.Id)
         //        },
         //        Operations = new StateSpecOperationsSource<TapModel, int>()
         //        {

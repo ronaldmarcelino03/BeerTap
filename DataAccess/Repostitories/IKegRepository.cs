@@ -11,7 +11,7 @@ namespace DataAccess.Repostitories
     {
         IEnumerable<Keg> GetKegs();
         Keg GetKegById(int id);
-        void Update();
+        void Update(Keg keg);
         void Save();
     }
 }

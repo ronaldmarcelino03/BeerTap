@@ -13,6 +13,6 @@ namespace BeerTapV2.Model
         public int Id { get; set; }
         public string Location { get; set; }
 
-        //public List<TapModel> Taps { get; set; }
+        //public List<TapModel> Kegs { get; set; }
     }
 }

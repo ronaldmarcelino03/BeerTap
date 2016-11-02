@@ -65,6 +65,8 @@
     <Compile Include="LinkRelations.cs" />
     <Compile Include="OfficeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PullBeerModel.cs" />
+    <Compile Include="ReplaceKegModel.cs" />
     <Compile Include="SampleResource.cs" />
     <Compile Include="TapModel.cs" />
   </ItemGroup>

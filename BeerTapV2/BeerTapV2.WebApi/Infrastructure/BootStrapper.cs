@@ -80,7 +80,7 @@ namespace BeerTapV2.WebApi.Infrastructure
             var hconfig = new HypermediaConfiguration
             {
                 EntryPoint = { ControllerType = typeof(EntryPointController<ApiEntryPointResource>), },
-                //ApiRelativePath = new Uri("internalPath", UriKind.Relative),
+                //ApiRelativePath = new UriTapAtOffice("internalPath", UriKind.Relative),
                 PingResourceFactory = typeof(CustomPingResourceFactory)
             };
 
