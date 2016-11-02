@@ -10,10 +10,7 @@ namespace BeerTapV2.ApiServices
 {
     public interface ITapApiService :
         IGetAResourceAsync<TapModel, int>,
-        IGetManyOfAResourceAsync<TapModel, int>,
-        ICreateAResourceAsync<TapModel, int>,
-        IUpdateAResourceAsync<TapModel, int>,
-        IDeleteResourceAsync<TapModel, int>
+        IGetManyOfAResourceAsync<TapModel, int>
     {
     }
 }

@@ -59,8 +59,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TapState.cs" />
-    <Compile Include="IStatefulPlace.cs" />
+    <Compile Include="KegModel.cs" />
+    <Compile Include="KegState.cs" />
+    <Compile Include="IStatefulKeg.cs" />
     <Compile Include="LinkRelations.cs" />
     <Compile Include="OfficeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

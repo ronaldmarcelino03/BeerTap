@@ -26,26 +26,6 @@ namespace DataAccess.Repostitories
             return _context.Taps.FirstOrDefault(_ => _.Id == id);
         }
 
-        public void InsertTap(Tap keg)
-        {
-            _context.Taps.Add(keg);
-        }
-
-        public void DeleteTap(Tap keg)
-        {
-            _context.Taps.Remove(keg);
-        }
-
-        public void UpdateTap(Tap keg)
-        {
-            _context.Entry(keg).State = EntityState.Modified;
-        }
-
-        public void Save()
-        {
-            _context.SaveChanges();
-        }
-
         protected virtual void Dispose(bool disposing)
         {
             if (!_disposed)

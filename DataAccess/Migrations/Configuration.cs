@@ -31,22 +31,22 @@ namespace DataAccess.Migrations
             //
 
             // Populate Offices
-            context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 1, Location = "Vancouver" });
-            context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 2, Location = "Regina" });
-            context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 3, Location = "Winnipeg" });
-            context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 4, Location = "Charlotte" });
-            context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 5, Location = "Manila" });
-            context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 6, Location = "Sydney" });
+            //context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 1, Location = "Vancouver" });
+            //context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 2, Location = "Regina" });
+            //context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 3, Location = "Winnipeg" });
+            //context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 4, Location = "Charlotte" });
+            //context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 5, Location = "Manila" });
+            //context.Offices.AddOrUpdate(x => x.Id, new Office() { Id = 6, Location = "Sydney" });
 
-            // Populate Taps
-            context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 1, Name = "Draft", Content = 10000, MaxContent = 10000, OfficeId = 1, TapState = "New" });
-            context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 2, Name = "Beer", Content = 10000, MaxContent = 10000, OfficeId = 2, TapState = "New" });
-            context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 3, Name = "Beer2", Content = 10000, MaxContent = 10000, OfficeId = 3, TapState = "New" });
-            context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 4, Name = "Budweiser", Content = 10000, MaxContent = 10000, OfficeId = 4, TapState = "New" });
-            context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 5, Name = "Pale Pilsen", Content = 10000, MaxContent = 10000, OfficeId = 5, TapState = "New" });
-            context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 6, Name = "Red Horse", Content = 10000, MaxContent = 10000, OfficeId = 5, TapState = "New" });
-            context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 7, Name = "San Mig Light", Content = 10000, MaxContent = 10000, OfficeId = 5, TapState = "New" });
-            context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 7, Name = "Beer3", Content = 10000, MaxContent = 10000, OfficeId = 6, TapState = "New" });
+            //// Populate Taps
+            //context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 1, Name = "Draft", Content = 10000, MaxContent = 10000, OfficeId = 1, KegState = "New" });
+            //context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 2, Name = "Beer", Content = 10000, MaxContent = 10000, OfficeId = 2, KegState = "New" });
+            //context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 3, Name = "Beer2", Content = 10000, MaxContent = 10000, OfficeId = 3, KegState = "New" });
+            //context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 4, Name = "Budweiser", Content = 10000, MaxContent = 10000, OfficeId = 4, KegState = "New" });
+            //context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 5, Name = "Pale Pilsen", Content = 10000, MaxContent = 10000, OfficeId = 5, KegState = "New" });
+            //context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 6, Name = "Red Horse", Content = 10000, MaxContent = 10000, OfficeId = 5, KegState = "New" });
+            //context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 7, Name = "San Mig Light", Content = 10000, MaxContent = 10000, OfficeId = 5, KegState = "New" });
+            //context.Taps.AddOrUpdate(x => x.Id, new Tap() { Id = 7, Name = "Beer3", Content = 10000, MaxContent = 10000, OfficeId = 6, KegState = "New" });
 
             context.SaveChanges();
         }

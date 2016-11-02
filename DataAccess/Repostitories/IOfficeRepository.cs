@@ -7,7 +7,7 @@ using DataAccess.Entities;
 
 namespace DataAccess.Repostitories
 {
-    public interface IOfficeRepository
+    public interface IOfficeRepository : IDisposable
     {
         IEnumerable<Office> GetOffices();
     }

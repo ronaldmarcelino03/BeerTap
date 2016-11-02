@@ -9,45 +9,45 @@ using IQ.Platform.Framework.WebApi.Model.Hypermedia;
 
 namespace BeerTapV2.WebApi.Hypermedia
 {
-    public class TapStateProvider : TapStateProvider<TapModel>
+    public class KegStateProvider : KegStateProvider<KegModel>
     {
 
     }
 
-    public class TapStateProvider<TTapResource> : ResourceStateProviderBase<TTapResource, TapState>
-        where TTapResource : IStatefulResource<TapState>, IStatefulTap
+    public class KegStateProvider<TTapResource> : ResourceStateProviderBase<TTapResource, KegState>
+        where TTapResource : IStatefulResource<KegState>, IStatefulKeg
     {
-        public override TapState GetFor(TTapResource resource)
+        public override KegState GetFor(TTapResource resource)
         {
-            return resource.TapState;
+            return resource.KegState;
         }
 
-        protected override IDictionary<TapState, IEnumerable<TapState>> GetTransitions()
+        protected override IDictionary<KegState, IEnumerable<KegState>> GetTransitions()
         {
-            return new Dictionary<TapState, IEnumerable<TapState>>
+            return new Dictionary<KegState, IEnumerable<KegState>>
             {
                 {
-                    TapState.New, new[]
+                    KegState.New, new[]
                     {
-                        TapState.GoingDown
+                        KegState.GoingDown
                     }
                 },
                 {
-                    TapState.GoingDown, new []
+                    KegState.GoingDown, new []
                     {
-                        TapState.AlmostEmpty
+                        KegState.AlmostEmpty
                     }
                 },
                 {
-                    TapState.AlmostEmpty, new []
+                    KegState.AlmostEmpty, new []
                     {
-                        TapState.Empty
+                        KegState.Empty
                     }
                 }
             };
         }
 
-        public override IEnumerable<TapState> All { get; }
+        public override IEnumerable<KegState> All { get; }
     }
 
     //public class PlaceStateProvider : PlaceStateProvider<Place>

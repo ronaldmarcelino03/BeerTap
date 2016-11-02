@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace BeerTapV2.Model
 {
-    public interface IStatefulTap
+    public enum KegState
     {
-        TapState TapState { get; set; }
+        New,
+        GoingDown,
+        AlmostEmpty,
+        Empty
     }
 }

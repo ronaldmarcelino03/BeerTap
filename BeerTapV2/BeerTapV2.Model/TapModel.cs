@@ -8,13 +8,10 @@ using IQ.Platform.Framework.WebApi.Model.Hypermedia;
 
 namespace BeerTapV2.Model
 {
-    public class TapModel : IIdentifiable<int>, IStatefulResource<TapState>, IStatefulTap
+    public class TapModel : IIdentifiable<int>, IStatelessResource
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public int Content { get; set; }
-        public int MaxContent { get; set; }
+        public string Location { get; set; }
         public int OfficeId { get; set; }
-        public TapState TapState { get; set; }
     }
 }

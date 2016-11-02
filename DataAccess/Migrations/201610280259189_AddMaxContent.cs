@@ -11,7 +11,7 @@ namespace DataAccess.Migrations
             DropIndex("dbo.Taps", new[] { "OfficeId" });
             AddColumn("dbo.Taps", "Content", c => c.Int(nullable: false));
             AddColumn("dbo.Taps", "MaxContent", c => c.Int(nullable: false));
-            AddColumn("dbo.Taps", "TapState", c => c.String());
+            AddColumn("dbo.Taps", "KegState", c => c.String());
             DropColumn("dbo.Taps", "Description");
             DropColumn("dbo.Taps", "ContentInMl");
         }
@@ -20,7 +20,7 @@ namespace DataAccess.Migrations
         {
             AddColumn("dbo.Taps", "ContentInMl", c => c.Int(nullable: false));
             AddColumn("dbo.Taps", "Description", c => c.String(maxLength: 50));
-            DropColumn("dbo.Taps", "TapState");
+            DropColumn("dbo.Taps", "KegState");
             DropColumn("dbo.Taps", "MaxContent");
             DropColumn("dbo.Taps", "Content");
             CreateIndex("dbo.Taps", "OfficeId");

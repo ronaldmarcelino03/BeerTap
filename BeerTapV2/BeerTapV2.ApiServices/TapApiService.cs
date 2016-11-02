@@ -20,11 +20,8 @@ namespace BeerTapV2.ApiServices
             return Task.FromResult(new TapModel()
             {
                 Id = tap.Id,
-                Name = tap.Name,
-                Content = tap.Content,
-                MaxContent = tap.MaxContent,
-                OfficeId = tap.OfficeId,
-                TapState = (TapState)Enum.Parse(typeof(TapState), tap.TapState, true)
+                Location = tap.Location,
+                OfficeId = tap.OfficeId
             });
         }
 
@@ -38,30 +35,12 @@ namespace BeerTapV2.ApiServices
                 tapModels.Add(new TapModel()
                 {
                     Id = tap.Id,
-                    Name = tap.Name,
-                    Content = tap.Content,
-                    MaxContent = tap.MaxContent,
-                    OfficeId = tap.OfficeId,
-                    TapState = (TapState)Enum.Parse(typeof(TapState), tap.TapState, true)
+                    Location = tap.Location,
+                    OfficeId = tap.OfficeId
                 });
             }
 
             return Task.FromResult(tapModels.AsEnumerable());
-        }
-
-        public Task<TapModel> UpdateAsync(TapModel resource, IRequestContext context, CancellationToken cancellation)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<ResourceCreationResult<TapModel, int>> ICreateAResourceAsync<TapModel, int>.CreateAsync(TapModel resource, IRequestContext context, CancellationToken cancellation)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteAsync(ResourceOrIdentifier<TapModel, int> input, IRequestContext context, CancellationToken cancellation)
-        {
-            throw new NotImplementedException();
         }
     }
 }
