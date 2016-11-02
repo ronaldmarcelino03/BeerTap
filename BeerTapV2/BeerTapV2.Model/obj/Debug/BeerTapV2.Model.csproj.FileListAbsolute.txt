@@ -1,0 +1,11 @@
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\bin\Debug\BeerTapV2.Model.XML
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\bin\Debug\BeerTapV2.Model.dll
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\bin\Debug\BeerTapV2.Model.pdb
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\bin\Debug\IQ.Platform.Framework.Common.dll
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\bin\Debug\IQ.Platform.Framework.WebApi.Model.dll
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\bin\Debug\Newtonsoft.Json.dll
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\bin\Debug\IQ.Platform.Framework.WebApi.Model.xml
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\bin\Debug\Newtonsoft.Json.xml
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\obj\Debug\BeerTapV2.Model.csprojResolveAssemblyReference.cache
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\obj\Debug\BeerTapV2.Model.dll
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\BeerTapV2\BeerTapV2.Model\obj\Debug\BeerTapV2.Model.pdb

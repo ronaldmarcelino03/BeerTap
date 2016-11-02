@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BeerTapV2.Model</name>
+    </assembly>
+    <members>
+        <member name="T:BeerTapV2.Model.LinkRelations">
+            <summary>
+            iQmetrix link relation names
+            </summary>
+        </member>
+        <member name="F:BeerTapV2.Model.LinkRelations.Office">
+            <summary>
+            link relation to describe the Identity resource.
+            </summary>
+        </member>
+        <member name="T:BeerTapV2.Model.SampleResource">
+            <summary>
+            A Sample Resource, used as a placeholder. To be removed after real-world API resources have been added.
+            </summary>
+        </member>
+        <member name="P:BeerTapV2.Model.SampleResource.Id">
+            <summary>
+            Unique Identifier for the SampleResource
+            </summary>
+        </member>
+        <member name="P:BeerTapV2.Model.SampleResource.Name">
+            <summary>
+            Name for the SampleResource
+            </summary>
+        </member>
+        <member name="P:BeerTapV2.Model.SampleResource.Description">
+            <summary>
+            Description for the SampleResource
+            </summary>
+        </member>
+    </members>
+</doc>

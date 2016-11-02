@@ -1,0 +1,13 @@
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\bin\Debug\DataAccess.dll.config
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\bin\Debug\DataAccess.dll
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\bin\Debug\DataAccess.pdb
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\bin\Debug\EntityFramework.dll
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\bin\Debug\EntityFramework.xml
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\obj\Debug\DataAccess.Migrations.BeerTapV2.resources
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.Cache
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\obj\Debug\DataAccess.dll
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\obj\Debug\DataAccess.pdb
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+c:\users\ronald.marcelino.iqmetrixho\documents\visual studio 2015\Projects\BeerTapV2\DataAccess\obj\Debug\DataAccess.Migrations.AddMaxContent.resources
