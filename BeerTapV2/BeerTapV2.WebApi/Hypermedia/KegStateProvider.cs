@@ -9,7 +9,7 @@ using IQ.Platform.Framework.WebApi.Model.Hypermedia;
 
 namespace BeerTapV2.WebApi.Hypermedia
 {
-    public class KegStateProvider : KegStateProvider<KegModel>
+    public class KegStateProvider : KegStateProvider<TapModel>
     {
 
     }

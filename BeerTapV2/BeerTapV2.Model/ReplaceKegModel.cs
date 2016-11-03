@@ -11,7 +11,9 @@ namespace BeerTapV2.Model
     public class ReplaceKegModel : IIdentifiable<int>, IStatelessResource
     {
         public int Id { get; }
+        public string Name { get; set; }
         public int KegId { get; set; }
-        public int Volume { get; set; }
+        public int TapId { get; set; }
+        public int OfficeId { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using BeerTapV2.ApiServices;
 using BeerTapV2.Model;
 using IQ.Platform.Framework.WebApi.Hypermedia;
 using IQ.Platform.Framework.WebApi.Hypermedia.Specs;
@@ -20,7 +21,7 @@ namespace BeerTapV2.WebApi.Hypermedia
 
         protected override IEnumerable<ResourceLinkTemplate<OfficeModel>> Links()
         {
-            yield return CreateLinkTemplate(CommonLinkRelations.Self, Uri, _ => _.Id);
+            yield return CreateLinkTemplate(CommonLinkRelations.Self, Uri, c => c.Id);
         }
 
         public override IResourceStateSpec<OfficeModel, NullState, int> StateSpec
@@ -32,14 +33,14 @@ namespace BeerTapV2.WebApi.Hypermedia
                     {
                         Links =
                         {
-                            CreateLinkTemplate(LinkRelations.Tap, TapSpec.UriTapAtOffice, _ => _.Id)
+                            CreateLinkTemplate(LinkRelations.Tap, TapSpec.Uri.Many, c => c.Id)
                         },
                         Operations = new StateSpecOperationsSource<OfficeModel, int>
                         {
                             Get = ServiceOperations.Get,
-                            InitialPost = ServiceOperations.Create,
-                            Post = ServiceOperations.Update,
-                            Delete = ServiceOperations.Delete
+                            //InitialPost = ServiceOperations.Create,
+                            //Post = ServiceOperations.Update,
+                            //Delete = ServiceOperations.Delete
                         }
                     };
             }

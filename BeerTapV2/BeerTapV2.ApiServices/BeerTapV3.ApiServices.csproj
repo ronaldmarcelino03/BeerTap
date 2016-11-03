@@ -176,14 +176,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDomainServiceResolver.cs" />
+    <Compile Include="IExtractDataFromARequestContext.cs" />
     <Compile Include="IKegApiService.cs" />
     <Compile Include="IOfficeApiServices.cs" />
+    <Compile Include="IPullBeerApiService.cs" />
+    <Compile Include="IReplaceKegApiService.cs" />
     <Compile Include="ISampleApiService.cs" />
     <Compile Include="ITapApiServices.cs" />
     <Compile Include="KegApiService.cs" />
-    <Compile Include="LinkParameters.cs" />
     <Compile Include="LinksParametersSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PullBeerApiService.cs" />
+    <Compile Include="ReplaceKegApiService.cs" />
     <Compile Include="Security\ApiClient.cs" />
     <Compile Include="Security\AuthenticationFailedException.cs" />
     <Compile Include="Security\BeerTapV2ApiUser.cs" />

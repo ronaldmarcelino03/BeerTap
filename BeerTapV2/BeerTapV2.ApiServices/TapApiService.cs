@@ -21,7 +21,9 @@ namespace BeerTapV2.ApiServices
             {
                 Id = tap.Id,
                 Name = tap.Name,
-                OfficeId = tap.OfficeId
+                OfficeId = tap.OfficeId,
+                KegId = tap.KegId,
+                KegState = (KegState)Enum.Parse(typeof(KegState), tap.KegState, true)
             });
         }
 
@@ -36,7 +38,9 @@ namespace BeerTapV2.ApiServices
                 {
                     Id = tap.Id,
                     Name = tap.Name,
-                    OfficeId = tap.OfficeId
+                    OfficeId = tap.OfficeId,
+                    KegId = tap.KegId,
+                    KegState = (KegState)Enum.Parse(typeof(KegState), tap.KegState, true)
                 });
             }
 

@@ -12,5 +12,8 @@ namespace BeerTapV2.Model
     {
         public int Id { get; }
         public int Volume { get; set; }
+        public int KegId { get; set; }
+        public int TapId { get; set; }
+        public int OfficeId { get; set; }
     }
 }

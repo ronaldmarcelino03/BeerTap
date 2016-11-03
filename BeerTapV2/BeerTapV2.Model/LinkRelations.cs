@@ -14,7 +14,7 @@
 
         public class Kegs
         {
-            public const string TapsUrl = "iq:Kegs";
+            //public const string TapsUrl = "iq:Kegs";
             public const string GetAllYouWant = "iq:GetAllYouWantBeer";
             public const string GetSomeMore = "iq:GetSomeMore";
             public const string GetWhatIsLeft = "iq:GetWhatIsLeft";

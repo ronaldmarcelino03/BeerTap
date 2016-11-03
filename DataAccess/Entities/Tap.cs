@@ -16,5 +16,6 @@ namespace DataAccess
         public string Name { get; set; }
         public int OfficeId { get; set; }
         public int KegId { get; set; }
+        public string KegState { get; set; }
     }
 }
