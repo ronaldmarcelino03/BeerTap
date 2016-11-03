@@ -1,0 +1,8 @@
+ReplaceKeg JSON Data
+
+{
+	"Name": "Draft X",
+	"KegId": "1",
+	"TapId": "1",
+	"OfficeId": "1"
+}
