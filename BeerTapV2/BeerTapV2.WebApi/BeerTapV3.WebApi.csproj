@@ -305,6 +305,7 @@
     <Compile Include="Hypermedia\KegStateProvider.cs" />
     <Compile Include="Infrastructure\BootStrapper.cs" />
     <Compile Include="Infrastructure\DefaultApiContainer.cs" />
+    <Compile Include="Infrastructure\Installers\ApiDependenciesInstaller.cs" />
     <Compile Include="Infrastructure\Installers\ResourceMapperInstaller.cs" />
     <Compile Include="Infrastructure\Installers\DomainServicesInstaller.cs" />
     <Compile Include="Infrastructure\CustomPingResourceFactory.cs" />
@@ -340,6 +341,10 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DataAccess\DataAccess.csproj">
+      <Project>{20D1CF43-5A93-4BD8-96F6-CD6E3B2060A5}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BeerTapV2.ApiServices\BeerTapV3.ApiServices.csproj">
       <Project>{006BC5D6-E8BF-40C9-9C9C-A55685624E43}</Project>
       <Name>BeerTapV3.ApiServices</Name>

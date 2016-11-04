@@ -12,7 +12,6 @@ namespace BeerTapV2.ApiServices
     public interface IKegApiService :
         IGetAResourceAsync<KegModel, int>,
         IGetManyOfAResourceAsync<KegModel, int>
-        //ICreateAResourceAsync<KegModel, int>
     {
     }
 }

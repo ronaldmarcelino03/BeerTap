@@ -25,7 +25,7 @@ namespace DataAccess.Repostitories
 
         public Tap GetTapById(int id)
         {
-            return _context.Taps.FirstOrDefault(_ => _.Id == id);
+            return _context.Taps.FirstOrDefault(c => c.Id == id);
         }
 
         public void Update(Tap tap)

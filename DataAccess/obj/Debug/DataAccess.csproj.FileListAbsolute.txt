@@ -35,3 +35,4 @@ C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerT
 C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.UpdateKegData.resources
 C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.UpdateRecords.resources
 C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.UpdateRecords2.resources
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.AddFixEntities.resources

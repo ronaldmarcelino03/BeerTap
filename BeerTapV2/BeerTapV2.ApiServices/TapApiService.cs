@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using BeerTapV2.ApiServices.RequestContext;
 using BeerTapV2.Model;
 using DataAccess.Repostitories;
 using IQ.Platform.Framework.WebApi;
@@ -12,9 +13,20 @@ namespace BeerTapV2.ApiServices
 {
     public class TapApiService : ITapApiService
     {
+        private readonly IExtractDataFromARequestContext _requestContextExtractor;
+        private ITapRepository _repository;
+
+        public TapApiService(IExtractDataFromARequestContext requestContextExtractor, ITapRepository tapRepository)
+        {
+            _requestContextExtractor = requestContextExtractor;
+            _repository = tapRepository;
+        }
+
         public Task<TapModel> GetAsync(int id, IRequestContext context, CancellationToken cancellation)
         {
-            var tap = new TapRepository().GetTapById(id);
+            _requestContextExtractor.ExtractOfficeId<TapModel>(context);
+
+            var tap = _repository.GetTapById(id);
 
             // To do: Use AutoMapper for models and entities
             return Task.FromResult(new TapModel()
@@ -29,7 +41,9 @@ namespace BeerTapV2.ApiServices
 
         public Task<IEnumerable<TapModel>> GetManyAsync(IRequestContext context, CancellationToken cancellation)
         {
-            var taps = new TapRepository().GetTaps();
+            _requestContextExtractor.ExtractOfficeId<TapModel>(context);
+
+            var taps = _repository.GetTaps();
             var tapModels = new List<TapModel>();
 
             foreach (var tap in taps)

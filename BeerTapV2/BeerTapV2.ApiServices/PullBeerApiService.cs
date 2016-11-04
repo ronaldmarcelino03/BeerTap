@@ -1,54 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using BeerTapV2.ApiServices.RequestContext;
 using BeerTapV2.Model;
 using DataAccess;
 using DataAccess.Entities;
 using DataAccess.Repostitories;
+using IQ.Platform.Framework.Common;
 using IQ.Platform.Framework.WebApi;
 
 namespace BeerTapV2.ApiServices
 {
     public class PullBeerApiService : IPullBeerApiService
     {
+        private readonly IExtractDataFromARequestContext _requestContextExtractor;
+        private IKegRepository _kegRepository;
+        private ITapRepository _tapRepository;
+
+        public PullBeerApiService(IExtractDataFromARequestContext requestContextExtractor, ITapRepository tapRepository, IKegRepository kegRepository)
+        {
+            _requestContextExtractor = requestContextExtractor;
+            _kegRepository = kegRepository;
+            _tapRepository = tapRepository;
+        }
+
         public Task<ResourceCreationResult<PullBeerModel, int>> CreateAsync(PullBeerModel resource, IRequestContext context, CancellationToken cancellation)
         {
-            using (var kegRepository = new KegRepository())
+            _requestContextExtractor.ExtractTapId<TapModel>(context);
+
+            // To be refactored/auto-mapped
+            var tapOption = context.UriParameters.GetByName<int>("tapId");
+            var tapId = tapOption.EnsureValue(() => context.CreateHttpResponseException<TapModel>("The tapId must be supplied in the URI", HttpStatusCode.BadRequest));
+            var tap = _tapRepository.GetTapById(tapId);
+            var keg = _kegRepository.GetKegById(tap.KegId);
+            var newContent = GetNewContent(keg.Content, resource.Volume);
+            var newKegState = GetKegState(newContent, keg.MaxContent);
+
+            // Update keg record
+            _kegRepository.Update(new Keg()
             {
-                var keg = kegRepository.GetKegById(resource.KegId);
-                var newContent = GetNewContent(keg.Content, resource.Volume);
-                var newKegState = GetKegState(newContent, keg.MaxContent);
+                Id = keg.Id,
+                TapId = keg.TapId,
+                Name = keg.Name,
+                MaxContent = keg.MaxContent,
+                Content = newContent,
+                UnitOfMeasurement = keg.UnitOfMeasurement
+            });
+            _kegRepository.Save();
 
-                // Update keg record
-                kegRepository.Update(new Keg()
-                {
-                    Id = keg.Id,
-                    OfficeId = keg.OfficeId,
-                    TapId = keg.TapId,
-                    Name = keg.Name,
-                    MaxContent = keg.MaxContent,
-                    Content = newContent,
-                    UnitOfMeasurement = keg.UnitOfMeasurement
-                });
-                kegRepository.Save();
-
-                // Update tap record's keg state
-                using (var tapRepository = new TapRepository())
-                {
-                    tapRepository.Update(new Tap()
-                    {
-                        Id = keg.TapId,
-                        KegId = keg.Id,
-                        Name = keg.Name,
-                        OfficeId = keg.OfficeId,
-                        KegState = newKegState.ToString()
-                    });
-                    tapRepository.Save();
-                }
-            }
+            // Update tap record's keg state
+            _tapRepository.Update(new Tap()
+            {
+                Id = tap.Id,
+                KegId = tap.KegId,
+                Name = tap.Name,
+                KegState = newKegState.ToString()
+            });
+            _tapRepository.Save();
 
             return Task.FromResult(new ResourceCreationResult<PullBeerModel, int>(resource));
         }
@@ -77,7 +89,7 @@ namespace BeerTapV2.ApiServices
 
         private float GetPercentage(float numerator, float denominator)
         {
-            return numerator/denominator * 100;
+            return numerator / denominator * 100;
         }
 
         private int GetNewContent(int content, int volume)

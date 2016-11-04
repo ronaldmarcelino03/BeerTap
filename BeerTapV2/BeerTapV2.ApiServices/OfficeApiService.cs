@@ -15,17 +15,19 @@ namespace BeerTapV2.ApiServices
     {
 
         readonly IApiUserProvider<BeerTapV2ApiUser> _userProvider;
+        private IOfficeRepository _repository;
 
-        public OfficeApiService(IApiUserProvider<BeerTapV2ApiUser> userProvider)
+        public OfficeApiService(IApiUserProvider<BeerTapV2ApiUser> userProvider, IOfficeRepository repository)
         {
             if (userProvider == null)
                 throw new ArgumentNullException("userProvider");
             _userProvider = userProvider;
+            _repository = repository;
         }
 
         public Task<OfficeModel> GetAsync(int id, IRequestContext context, CancellationToken cancellation)
         {
-            var office = new OfficeRepository().GetOfficeModelById(id);
+            var office = _repository.GetOfficeModelById(id);
 
             return Task.FromResult(new OfficeModel()
             {
@@ -36,7 +38,7 @@ namespace BeerTapV2.ApiServices
 
         public Task<IEnumerable<OfficeModel>> GetManyAsync(IRequestContext context, CancellationToken cancellation)
         {
-            var offices = new OfficeRepository().GetOffices();
+            var offices = _repository.GetOffices();
             var officeModels = new List<OfficeModel>();
 
             foreach (var office in offices)

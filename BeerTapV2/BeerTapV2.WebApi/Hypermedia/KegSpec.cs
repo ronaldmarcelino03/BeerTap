@@ -12,7 +12,7 @@ namespace BeerTapV2.WebApi.Hypermedia
 {
     public class KegSpec : SingleStateResourceSpec<KegModel, int>
     {
-        public static ResourceUriTemplate Uri = ResourceUriTemplate.Create("Offices({OfficeId})/Taps({TapId})/Kegs({id})");
+        public static ResourceUriTemplate Uri = ResourceUriTemplate.Create("Offices({officeId})/Taps({tapId})/Kegs({id})");
 
         public override string EntrypointRelation
         {
@@ -21,7 +21,7 @@ namespace BeerTapV2.WebApi.Hypermedia
 
         protected override IEnumerable<ResourceLinkTemplate<KegModel>> Links()
         {
-            yield return CreateLinkTemplate(CommonLinkRelations.Self, Uri, c => c.OfficeId, c => c.TapId, c => c.Id);
+            yield return CreateLinkTemplate<LinkParameters>(CommonLinkRelations.Self, Uri, c => c.Parameters.OfficeId, c => c.Parameters.TapId, c => c.Resource.Id);
         }
 
         public override IResourceStateSpec<KegModel, NullState, int> StateSpec
@@ -37,10 +37,7 @@ namespace BeerTapV2.WebApi.Hypermedia
                         },
                         Operations = new StateSpecOperationsSource<KegModel, int>
                         {
-                            Get = ServiceOperations.Get,
-                            InitialPost = ServiceOperations.Create,
-                            Post = ServiceOperations.Update,
-                            Delete = ServiceOperations.Delete
+                            Get = ServiceOperations.Get
                         }
                     };
             }

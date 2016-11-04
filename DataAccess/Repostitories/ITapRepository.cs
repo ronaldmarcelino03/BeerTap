@@ -11,5 +11,7 @@ namespace DataAccess.Repostitories
     {
         IEnumerable<Tap> GetTaps();
         Tap GetTapById(int Id);
+        void Update(Tap tap);
+        void Save();
     }
 }

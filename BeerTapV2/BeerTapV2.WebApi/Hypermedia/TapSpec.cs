@@ -22,6 +22,7 @@ namespace BeerTapV2.WebApi.Hypermedia
         protected override IEnumerable<ResourceLinkTemplate<TapModel>> Links()
         {
             yield return CreateLinkTemplate(CommonLinkRelations.Self, Uri, c => c.OfficeId, c => c.Id);
+            yield return CreateLinkTemplate(LinkRelations.Keg, KegSpec.Uri.Many, c => c.OfficeId, c => c.Id);
         }
 
         protected override IEnumerable<IResourceStateSpec<TapModel, KegState, int>> GetStateSpecs()
@@ -35,11 +36,7 @@ namespace BeerTapV2.WebApi.Hypermedia
                  },
                 Operations = new StateSpecOperationsSource<TapModel, int>()
                 {
-                    Get = ServiceOperations.Get,
-                    InitialPost = ServiceOperations.Create,
-                    Post = ServiceOperations.Update,
-                    Put = ServiceOperations.Update,
-                    Delete = ServiceOperations.Delete
+                    InitialPost = ServiceOperations.Create
                 }
             };
 
@@ -52,11 +49,7 @@ namespace BeerTapV2.WebApi.Hypermedia
                     },
                 Operations = new StateSpecOperationsSource<TapModel, int>()
                 {
-                    Get = ServiceOperations.Get,
-                    InitialPost = ServiceOperations.Create,
-                    Post = ServiceOperations.Update,
-                    Put = ServiceOperations.Update,
-                    Delete = ServiceOperations.Delete
+                    InitialPost = ServiceOperations.Create
                 }
             };
 
@@ -69,11 +62,7 @@ namespace BeerTapV2.WebApi.Hypermedia
                     },
                 Operations = new StateSpecOperationsSource<TapModel, int>()
                 {
-                    Get = ServiceOperations.Get,
-                    InitialPost = ServiceOperations.Create,
-                    Post = ServiceOperations.Update,
-                    Put = ServiceOperations.Update,
-                    Delete = ServiceOperations.Delete
+                    InitialPost = ServiceOperations.Create
                 }
             };
 
@@ -86,11 +75,7 @@ namespace BeerTapV2.WebApi.Hypermedia
                     },
                 Operations = new StateSpecOperationsSource<TapModel, int>()
                 {
-                    Get = ServiceOperations.Get,
-                    InitialPost = ServiceOperations.Create,
-                    Post = ServiceOperations.Update,
-                    Put = ServiceOperations.Update,
-                    Delete = ServiceOperations.Delete
+                    InitialPost = ServiceOperations.Create
                 }
             };
         }

@@ -9,6 +9,7 @@ namespace DataAccess.Repostitories
 {
     public interface IOfficeRepository : IDisposable
     {
+        Office GetOfficeModelById(int id);
         IEnumerable<Office> GetOffices();
     }
 }

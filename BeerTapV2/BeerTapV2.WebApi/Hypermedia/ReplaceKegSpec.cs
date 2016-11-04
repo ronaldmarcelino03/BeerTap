@@ -16,7 +16,9 @@ namespace BeerTapV2.WebApi.Hypermedia
 
         protected override IEnumerable<ResourceLinkTemplate<ReplaceKegModel>> Links()
         {
-            yield return CreateLinkTemplate(CommonLinkRelations.Self, Uri, c => c.OfficeId, c => c.TapId);
+            yield return CreateLinkTemplate<LinkParameters>(CommonLinkRelations.Self, Uri, c => c.Parameters.OfficeId, c => c.Parameters.TapId);
+            yield return CreateLinkTemplate<LinkParameters>(LinkRelations.Keg, KegSpec.Uri.Many, c => c.Parameters.OfficeId,
+                c => c.Parameters.TapId);
         }
 
         public override IResourceStateSpec<ReplaceKegModel, NullState, int> StateSpec
@@ -28,14 +30,11 @@ namespace BeerTapV2.WebApi.Hypermedia
                     {
                         Links =
                         {
-                            CreateLinkTemplate(LinkRelations.Tap, TapSpec.Uri.Many, c => c.OfficeId)
+                            CreateLinkTemplate<LinkParameters>(LinkRelations.Tap, TapSpec.Uri.Many, c => c.Parameters.OfficeId)
                         },
                         Operations = new StateSpecOperationsSource<ReplaceKegModel, int>
                         {
-                            //Get = ServiceOperations.Get,
-                            InitialPost = ServiceOperations.Create,
-                            Post = ServiceOperations.Update,
-                            //Delete = ServiceOperations.Delete
+                            InitialPost = ServiceOperations.Create
                         }
                     };
             }

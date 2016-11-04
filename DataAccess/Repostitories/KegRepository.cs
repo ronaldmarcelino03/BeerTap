@@ -30,15 +30,6 @@ namespace DataAccess.Repostitories
         
         public void Update(Keg keg)
         {
-            //_context.Kegs.AddOrUpdate(new Keg()
-            //{
-            //    Id = keg.Id,
-            //    Name = keg.Name,
-            //    Content = keg.Content,
-            //    MaxContent = keg.MaxContent,
-            //    UnitOfMeasurement = keg.UnitOfMeasurement,
-            //    KegState = keg.KegState
-            //});
             _context.Kegs.AddOrUpdate(keg);
         }
 

@@ -106,6 +106,10 @@
     <Compile Include="Migrations\201611030213437_UpdateRecords2.Designer.cs">
       <DependentUpon>201611030213437_UpdateRecords2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611040843569_AddFixEntities.cs" />
+    <Compile Include="Migrations\201611040843569_AddFixEntities.Designer.cs">
+      <DependentUpon>201611040843569_AddFixEntities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repostitories\IKegRepository.cs" />
@@ -159,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611030213437_UpdateRecords2.resx">
       <DependentUpon>201611030213437_UpdateRecords2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611040843569_AddFixEntities.resx">
+      <DependentUpon>201611040843569_AddFixEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

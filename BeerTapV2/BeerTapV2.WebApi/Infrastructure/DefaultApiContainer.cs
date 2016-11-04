@@ -13,12 +13,14 @@ using IQ.Platform.Framework.WebApi.Security;
 using IQ.Platform.Framework.WebApi.Services.Installers;
 using IQ.Platform.Framework.WebApi.Services.Security;
 using BeerTapV2.ApiServices;
+using BeerTapV2.ApiServices.RequestContext;
 using BeerTapV2.ApiServices.Security;
 using BeerTapV2.Documentation.Installers;
 using BeerTapV2.WebApi.Handlers;
 using BeerTapV2.WebApi.Hypermedia;
 using BeerTapV2.WebApi.Infrastructure.Installers;
 using BeerTapV2.Model;
+using DataAccess.Repostitories;
 using IQ.Platform.Framework.WebApi.Infrastructure;
 
 namespace BeerTapV2.WebApi.Infrastructure
@@ -58,6 +60,13 @@ namespace BeerTapV2.WebApi.Infrastructure
                              new SecurityMessageHandlersInstaller(Assembly.GetExecutingAssembly()),
                          })
                          .InstallLogging();
+
+            _windsorContainer.Register(Component.For<IOfficeRepository, OfficeRepository>());
+            _windsorContainer.Register(Component.For<ITapRepository, TapRepository>());
+            _windsorContainer.Register(Component.For<IKegRepository, KegRepository>());
+
+            // Register request context extractor used for data transmission
+            _windsorContainer.Register(Component.For<IExtractDataFromARequestContext, RequestContextExtractor>());
 
             //_windsorContainer.Register(Component.For<IApiUserFactory<ApiUser<UserAuthData>>>().ImplementedBy<DefaultApiUserFactory<UserAuthData>>());
             _windsorContainer.Register(Component.For<IRequestAuthenticator<UserAuthData>>().ImplementedBy<DefaultSsoBasedRequestAuthenticator>());

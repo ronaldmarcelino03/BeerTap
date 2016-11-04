@@ -1,0 +1,16 @@
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\BeerTapV3UI.exe.config
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\BeerTapV3UI.exe
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\BeerTapV3UI.pdb
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\obj\Debug\BeerTapV3UI.csprojResolveAssemblyReference.cache
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\obj\Debug\BeerTapV3UI.exe
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\obj\Debug\BeerTapV3UI.pdb
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\BeerTapV2.Model.dll
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\IQ.Platform.Framework.WebApi.Model.dll
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\IQ.Platform.Framework.Common.dll
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\BeerTapV2.Model.pdb
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\BeerTapV2.Model.xml
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\BeerTapV3UI\bin\Debug\IQ.Platform.Framework.WebApi.Model.xml

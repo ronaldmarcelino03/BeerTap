@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IQ.Platform.Framework.WebApi;
 
-namespace BeerTapV2.ApiServices
+namespace BeerTapV2.ApiServices.RequestContext
 {
     public interface IExtractDataFromARequestContext
     {

@@ -16,6 +16,5 @@ namespace BeerTapV2.Model
         public int MaxContent { get; set; }
         public string UnitOfMeasurement { get; set; }
         public int TapId { get; set; }
-        public int OfficeId { get; set; }
     }
 }

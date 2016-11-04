@@ -37,10 +37,7 @@ namespace BeerTapV2.WebApi.Hypermedia
                         },
                         Operations = new StateSpecOperationsSource<OfficeModel, int>
                         {
-                            Get = ServiceOperations.Get,
-                            //InitialPost = ServiceOperations.Create,
-                            //Post = ServiceOperations.Update,
-                            //Delete = ServiceOperations.Delete
+                            Get = ServiceOperations.Get
                         }
                     };
             }

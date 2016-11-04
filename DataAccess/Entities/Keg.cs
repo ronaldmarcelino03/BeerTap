@@ -15,8 +15,6 @@ namespace DataAccess.Entities
         public int Content { get; set; }
         public int MaxContent { get; set; }
         public string UnitOfMeasurement { get; set; }
-        //public string KegState { get; set; }
         public int TapId { get; set; }
-        public int OfficeId { get; set; }
     }
 }
