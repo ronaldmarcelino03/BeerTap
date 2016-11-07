@@ -29,7 +29,19 @@ namespace DataAccess.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Offices", t => t.OfficeId, cascadeDelete: true)
                 .Index(t => t.OfficeId);
-            
+            CreateTable(
+                "dbo.Kegs",
+                c => new
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    Content = c.Int(nullable: false),
+                    MaxContent = c.Int(nullable: false),
+                    UnitOfMeasurement = c.String(),
+                    TapId = c.Int(nullable: false),
+                })
+                .PrimaryKey(t => t.Id);
+
         }
         
         public override void Down()
