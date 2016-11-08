@@ -9,13 +9,15 @@ using DataAccess.Entities;
 
 namespace DataAccess
 {
-    public class Tap
-    {
-        [Key]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int OfficeId { get; set; }
-        public int KegId { get; set; }
-        public string KegState { get; set; }
-    }
+	public class Tap
+	{
+		[Key]
+		public int Id { get; set; }
+		public int OfficeId { get; set; }
+		public string BeerName { get; set; }
+		public int Content { get; set; }
+		public int MaxContent { get; set; }
+		public string UnitOfMeasurement { get; set; }
+		public string KegState { get; set; }
+	}
 }

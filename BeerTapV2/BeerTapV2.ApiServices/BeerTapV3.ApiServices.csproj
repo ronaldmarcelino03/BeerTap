@@ -176,13 +176,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDomainServiceResolver.cs" />
-    <Compile Include="IKegApiService.cs" />
     <Compile Include="IOfficeApiServices.cs" />
     <Compile Include="IPullBeerApiService.cs" />
     <Compile Include="IReplaceKegApiService.cs" />
     <Compile Include="ISampleApiService.cs" />
     <Compile Include="ITapApiServices.cs" />
-    <Compile Include="KegApiService.cs" />
     <Compile Include="LinkParameters.cs" />
     <Compile Include="LinksParametersSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

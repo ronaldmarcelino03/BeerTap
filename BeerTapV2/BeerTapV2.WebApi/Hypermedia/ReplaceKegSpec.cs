@@ -17,9 +17,8 @@ namespace BeerTapV2.WebApi.Hypermedia
         protected override IEnumerable<ResourceLinkTemplate<ReplaceKegModel>> Links()
         {
             yield return CreateLinkTemplate<LinkParameters>(CommonLinkRelations.Self, Uri, c => c.Parameters.OfficeId, c => c.Parameters.TapId);
-            yield return CreateLinkTemplate<LinkParameters>(LinkRelations.Keg, KegSpec.Uri.Many, c => c.Parameters.OfficeId,
-                c => c.Parameters.TapId);
-        }
+			yield return CreateLinkTemplate<LinkParameters>(LinkRelations.Tap, TapSpec.Uri, c => c.Parameters.OfficeId, c => c.Parameters.TapId);
+		}
 
         public override IResourceStateSpec<ReplaceKegModel, NullState, int> StateSpec
         {

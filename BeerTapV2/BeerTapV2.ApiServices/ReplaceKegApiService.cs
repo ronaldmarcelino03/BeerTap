@@ -18,13 +18,11 @@ namespace BeerTapV2.ApiServices
     public class ReplaceKegApiService : IReplaceKegApiService
     {
         private readonly IExtractDataFromARequestContext _requestContextExtractor;
-        private IKegRepository _kegRepository;
         private ITapRepository _tapRepository;
 
-        public ReplaceKegApiService(IExtractDataFromARequestContext requestContextExtractor, IKegRepository kegRepository, ITapRepository tapRepository)
+        public ReplaceKegApiService(IExtractDataFromARequestContext requestContextExtractor, ITapRepository tapRepository)
         {
             _requestContextExtractor = requestContextExtractor;
-            _kegRepository = kegRepository;
             _tapRepository = tapRepository;
         }
 
@@ -37,32 +35,28 @@ namespace BeerTapV2.ApiServices
             var tapId = tapOption.EnsureValue(() => context.CreateHttpResponseException<TapModel>("Cannot find tap identifier in the uri", HttpStatusCode.BadRequest));
             var tap = _tapRepository.GetTapById(tapId);
 
-            // Get keg to retrieve other info then update
-            var keg = _kegRepository.GetKegById(tap.KegId);
+	        if (tap.KegState == KegState.Empty.ToString())
+	        {
+		        var beerName = resource.BeerName ?? tap.BeerName; // Take from resource if not null
 
-            _kegRepository.Update(new Keg()
-            {
-                Id = keg.Id,
-                Name = resource.Name, // Take from resource
-                TapId = keg.TapId,
-                Content = keg.MaxContent, // Refill the keg to full
-                MaxContent = keg.MaxContent,
-                UnitOfMeasurement = keg.UnitOfMeasurement
-            });
-            _kegRepository.Save();
+		        // Update tap record
+		        _tapRepository.Update(new Tap()
+		        {
+			        Id = tap.Id,
+			        OfficeId = tap.OfficeId,
+			        BeerName = beerName,
+			        Content = tap.MaxContent, // Refill the keg to full
+			        MaxContent = tap.MaxContent,
+			        UnitOfMeasurement = tap.UnitOfMeasurement,
+			        KegState = KegState.New.ToString(), // Set the state to new
+		        });
+		        _tapRepository.Save();
 
-            // Update Tap's keg state record
-            _tapRepository.Update(new Tap()
-            {
-                Id = tap.Id,
-                KegState = KegState.New.ToString(), // Set the state to new
-                OfficeId = tap.OfficeId,
-                Name = tap.Name,
-                KegId = tap.KegId
-            });
-            _tapRepository.Save();
+				// Update resource before returning
+		        resource.BeerName = beerName;
+	        }
 
-            return Task.FromResult(new ResourceCreationResult<ReplaceKegModel, int>(resource));
+			return Task.FromResult(new ResourceCreationResult<ReplaceKegModel, int>(resource));
         }
     }
 }

@@ -15,88 +15,92 @@ using IQ.Platform.Framework.WebApi;
 
 namespace BeerTapV2.ApiServices
 {
-    public class PullBeerApiService : IPullBeerApiService
-    {
-        private readonly IExtractDataFromARequestContext _requestContextExtractor;
-        private IKegRepository _kegRepository;
-        private ITapRepository _tapRepository;
+	public class PullBeerApiService : IPullBeerApiService
+	{
+		private readonly IExtractDataFromARequestContext _requestContextExtractor;
+		private ITapRepository _tapRepository;
 
-        public PullBeerApiService(IExtractDataFromARequestContext requestContextExtractor, ITapRepository tapRepository, IKegRepository kegRepository)
-        {
-            _requestContextExtractor = requestContextExtractor;
-            _kegRepository = kegRepository;
-            _tapRepository = tapRepository;
-        }
+		public PullBeerApiService(IExtractDataFromARequestContext requestContextExtractor, ITapRepository tapRepository)
+		{
+			_requestContextExtractor = requestContextExtractor;
+			_tapRepository = tapRepository;
+		}
 
-        public Task<ResourceCreationResult<PullBeerModel, int>> CreateAsync(PullBeerModel resource, IRequestContext context, CancellationToken cancellation)
-        {
-            _requestContextExtractor.ExtractTapId<TapModel>(context);
+		public Task<ResourceCreationResult<PullBeerModel, int>> CreateAsync(PullBeerModel resource, IRequestContext context, CancellationToken cancellation)
+		{
+			_requestContextExtractor.ExtractTapId<TapModel>(context);
 
-            // To be refactored/auto-mapped
-            var tapOption = context.UriParameters.GetByName<int>("tapId");
-            var tapId = tapOption.EnsureValue(() => context.CreateHttpResponseException<TapModel>("The tapId must be supplied in the URI", HttpStatusCode.BadRequest));
-            var tap = _tapRepository.GetTapById(tapId);
-            var keg = _kegRepository.GetKegById(tap.KegId);
-            var newContent = GetNewContent(keg.Content, resource.Volume);
-            var newKegState = GetKegState(newContent, keg.MaxContent);
+			// To be refactored/auto-mapped
+			var tapOption = context.UriParameters.GetByName<int>("tapId");
+			var tapId = tapOption.EnsureValue(() => context.CreateHttpResponseException<TapModel>("The tapId must be supplied in the URI", HttpStatusCode.BadRequest));
+			var tap = _tapRepository.GetTapById(tapId);
 
-            // Update keg record
-            _kegRepository.Update(new Keg()
-            {
-                Id = keg.Id,
-                TapId = keg.TapId,
-                Name = keg.Name,
-                MaxContent = keg.MaxContent,
-                Content = newContent,
-                UnitOfMeasurement = keg.UnitOfMeasurement
-            });
-            _kegRepository.Save();
+			if (tap.KegState != KegState.Empty.ToString())
+			{
+				int volumePulled;
+				var newContent = GetNewContent(tap.Content, resource.Volume, out volumePulled);
+				var newKegState = GetKegState(newContent, tap.MaxContent);
 
-            // Update tap record's keg state
-            _tapRepository.Update(new Tap()
-            {
-                Id = tap.Id,
-                KegId = tap.KegId,
-                Name = tap.Name,
-                KegState = newKegState.ToString()
-            });
-            _tapRepository.Save();
+				// Update tap record
+				_tapRepository.Update(new Tap()
+				{
+					Id = tap.Id,
+					OfficeId = tap.OfficeId,
+					BeerName = tap.BeerName,
+					Content = newContent,
+					MaxContent = tap.MaxContent,
+					UnitOfMeasurement = tap.UnitOfMeasurement,
+					KegState = newKegState.ToString()
+				});
+				_tapRepository.Save();
 
-            return Task.FromResult(new ResourceCreationResult<PullBeerModel, int>(resource));
-        }
+				// Update resource before returning
+				resource.Volume = volumePulled;
+			}
 
-        private KegState GetKegState(int content, int maxContent)
-        {
-            var percentage = GetPercentage(content, maxContent);
+			return Task.FromResult(new ResourceCreationResult<PullBeerModel, int>(resource));
+		}
 
-            if (percentage <= 0)
-            {
-                return KegState.Empty;
-            }
-            else if (percentage <= 25)
-            {
-                return KegState.AlmostEmpty;
-            }
-            else if (percentage < 100)
-            {
-                return KegState.GoingDown;
-            }
-            else
-            {
-                return KegState.New;
-            }
-        }
+		private KegState GetKegState(int content, int maxContent)
+		{
+			var percentage = GetPercentage(content, maxContent);
 
-        private float GetPercentage(float numerator, float denominator)
-        {
-            return numerator / denominator * 100;
-        }
+			if (percentage <= 0)
+			{
+				return KegState.Empty;
+			}
+			else if (percentage <= 25)
+			{
+				return KegState.AlmostEmpty;
+			}
+			else if (percentage < 100)
+			{
+				return KegState.GoingDown;
+			}
+			else
+			{
+				return KegState.New;
+			}
+		}
 
-        private int GetNewContent(int content, int volume)
-        {
-            var newContent = content - volume;
+		private float GetPercentage(float numerator, float denominator)
+		{
+			return numerator / denominator * 100;
+		}
 
-            return newContent < 0 ? 0 : newContent;
-        }
-    }
+		private int GetNewContent(int content, int volume, out int volumePulled)
+		{
+			var newContent = content - volume;
+
+			if (newContent < 0)
+			{
+				volumePulled = volume - (newContent*-1);
+				newContent = 0;
+			}
+			else
+				volumePulled = volume;
+
+			return newContent;
+		}
+	}
 }

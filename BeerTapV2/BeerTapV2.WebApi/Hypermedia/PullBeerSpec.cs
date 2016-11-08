@@ -20,9 +20,8 @@ namespace BeerTapV2.WebApi.Hypermedia
         protected override IEnumerable<ResourceLinkTemplate<PullBeerModel>> Links()
         {
             yield return CreateLinkTemplate<LinkParameters>(CommonLinkRelations.Self, Uri, c => c.Parameters.OfficeId, c => c.Parameters.TapId);
-            yield return CreateLinkTemplate<LinkParameters>(LinkRelations.Keg, KegSpec.Uri.Many, c => c.Parameters.OfficeId,
-                c => c.Parameters.TapId);
-        }
+			yield return CreateLinkTemplate<LinkParameters>(LinkRelations.Tap, TapSpec.Uri, c => c.Parameters.OfficeId, c => c.Parameters.TapId);
+		}
         public override IResourceStateSpec<PullBeerModel, NullState, int> StateSpec
         {
             get

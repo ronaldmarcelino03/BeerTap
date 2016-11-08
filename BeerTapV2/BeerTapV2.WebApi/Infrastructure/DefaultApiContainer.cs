@@ -63,7 +63,6 @@ namespace BeerTapV2.WebApi.Infrastructure
 
             _windsorContainer.Register(Component.For<IOfficeRepository, OfficeRepository>());
             _windsorContainer.Register(Component.For<ITapRepository, TapRepository>());
-            _windsorContainer.Register(Component.For<IKegRepository, KegRepository>());
 
             // Register request context extractor used for data transmission
             _windsorContainer.Register(Component.For<IExtractDataFromARequestContext, RequestContextExtractor>());

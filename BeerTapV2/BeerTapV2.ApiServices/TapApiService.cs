@@ -30,12 +30,14 @@ namespace BeerTapV2.ApiServices
 
             // To do: Use AutoMapper for models and entities
             return Task.FromResult(new TapModel()
-            {
-                Id = tap.Id,
-                Name = tap.Name,
-                OfficeId = tap.OfficeId,
-                KegId = tap.KegId,
-                KegState = (KegState)Enum.Parse(typeof(KegState), tap.KegState, true)
+			{
+				Id = tap.Id,
+				OfficeId = tap.OfficeId,
+				BeerName = tap.BeerName,
+				Content = tap.Content,
+				MaxContent = tap.MaxContent,
+				UnitOfMeasurement = tap.UnitOfMeasurement,
+				KegState = (KegState)Enum.Parse(typeof(KegState), tap.KegState, true)
             });
         }
 
@@ -49,12 +51,14 @@ namespace BeerTapV2.ApiServices
             foreach (var tap in taps)
             {
                 tapModels.Add(new TapModel()
-                {
-                    Id = tap.Id,
-                    Name = tap.Name,
-                    OfficeId = tap.OfficeId,
-                    KegId = tap.KegId,
-                    KegState = (KegState)Enum.Parse(typeof(KegState), tap.KegState, true)
+				{
+					Id = tap.Id,
+					OfficeId = tap.OfficeId,
+					BeerName = tap.BeerName,
+					Content = tap.Content,
+					MaxContent = tap.MaxContent,
+					UnitOfMeasurement = tap.UnitOfMeasurement,
+					KegState = (KegState)Enum.Parse(typeof(KegState), tap.KegState, true)
                 });
             }
 

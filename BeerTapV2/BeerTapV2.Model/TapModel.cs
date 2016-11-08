@@ -11,9 +11,11 @@ namespace BeerTapV2.Model
     public class TapModel : IIdentifiable<int>, IStatefulResource<KegState>, IStatefulKeg
     {
         public int Id { get; set; }
-        public string Name { get; set; }
         public int OfficeId { get; set; }
-        public int KegId { get; set; }
-        public KegState KegState { get; set; }
+		public string BeerName { get; set; }
+		public int Content { get; set; }
+		public int MaxContent { get; set; }
+		public string UnitOfMeasurement { get; set; }
+		public KegState KegState { get; set; }
     }
 }
