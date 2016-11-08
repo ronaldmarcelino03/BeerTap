@@ -54,61 +54,13 @@
     <Compile Include="Entities\Keg.cs" />
     <Compile Include="Entities\Office.cs" />
     <Compile Include="Entities\Tap.cs" />
-    <Compile Include="Migrations\201610270328543_BeerTapV2.cs" />
-    <Compile Include="Migrations\201610270328543_BeerTapV2.Designer.cs">
-      <DependentUpon>201610270328543_BeerTapV2.cs</DependentUpon>
+    <Compile Include="Migrations\201611080134305_Initial.cs" />
+    <Compile Include="Migrations\201611080134305_Initial.Designer.cs">
+      <DependentUpon>201611080134305_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610280259189_AddMaxContent.cs" />
-    <Compile Include="Migrations\201610280259189_AddMaxContent.Designer.cs">
-      <DependentUpon>201610280259189_AddMaxContent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611020558040_Add_Fix_Entities.cs" />
-    <Compile Include="Migrations\201611020558040_Add_Fix_Entities.Designer.cs">
-      <DependentUpon>201611020558040_Add_Fix_Entities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611020620399_Add_Fix_KegEntity.cs" />
-    <Compile Include="Migrations\201611020620399_Add_Fix_KegEntity.Designer.cs">
-      <DependentUpon>201611020620399_Add_Fix_KegEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611020631367_Add_FixTapEntity.cs" />
-    <Compile Include="Migrations\201611020631367_Add_FixTapEntity.Designer.cs">
-      <DependentUpon>201611020631367_Add_FixTapEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611020633175_Add_PopulateTaps.cs" />
-    <Compile Include="Migrations\201611020633175_Add_PopulateTaps.Designer.cs">
-      <DependentUpon>201611020633175_Add_PopulateTaps.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611020642196_Add_ModifyTapEntity.cs" />
-    <Compile Include="Migrations\201611020642196_Add_ModifyTapEntity.Designer.cs">
-      <DependentUpon>201611020642196_Add_ModifyTapEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611020655456_Add_TapIdOnKegs.cs" />
-    <Compile Include="Migrations\201611020655456_Add_TapIdOnKegs.Designer.cs">
-      <DependentUpon>201611020655456_Add_TapIdOnKegs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611021242500_UpdateEntitiesAndModels.cs" />
-    <Compile Include="Migrations\201611021242500_UpdateEntitiesAndModels.Designer.cs">
-      <DependentUpon>201611021242500_UpdateEntitiesAndModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611021311388_UpdateEntitiesAndModels2.cs" />
-    <Compile Include="Migrations\201611021311388_UpdateEntitiesAndModels2.Designer.cs">
-      <DependentUpon>201611021311388_UpdateEntitiesAndModels2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611021417285_UpdateKegData.cs" />
-    <Compile Include="Migrations\201611021417285_UpdateKegData.Designer.cs">
-      <DependentUpon>201611021417285_UpdateKegData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611030131148_UpdateRecords.cs" />
-    <Compile Include="Migrations\201611030131148_UpdateRecords.Designer.cs">
-      <DependentUpon>201611030131148_UpdateRecords.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611030213437_UpdateRecords2.cs" />
-    <Compile Include="Migrations\201611030213437_UpdateRecords2.Designer.cs">
-      <DependentUpon>201611030213437_UpdateRecords2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611040843569_AddFixEntities.cs" />
-    <Compile Include="Migrations\201611040843569_AddFixEntities.Designer.cs">
-      <DependentUpon>201611040843569_AddFixEntities.cs</DependentUpon>
+    <Compile Include="Migrations\201611080143041_PopulateTables.cs" />
+    <Compile Include="Migrations\201611080143041_PopulateTables.Designer.cs">
+      <DependentUpon>201611080143041_PopulateTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,49 +75,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610270328543_BeerTapV2.resx">
-      <DependentUpon>201610270328543_BeerTapV2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611080134305_Initial.resx">
+      <DependentUpon>201611080134305_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610280259189_AddMaxContent.resx">
-      <DependentUpon>201610280259189_AddMaxContent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611020558040_Add_Fix_Entities.resx">
-      <DependentUpon>201611020558040_Add_Fix_Entities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611020620399_Add_Fix_KegEntity.resx">
-      <DependentUpon>201611020620399_Add_Fix_KegEntity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611020631367_Add_FixTapEntity.resx">
-      <DependentUpon>201611020631367_Add_FixTapEntity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611020633175_Add_PopulateTaps.resx">
-      <DependentUpon>201611020633175_Add_PopulateTaps.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611020642196_Add_ModifyTapEntity.resx">
-      <DependentUpon>201611020642196_Add_ModifyTapEntity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611020655456_Add_TapIdOnKegs.resx">
-      <DependentUpon>201611020655456_Add_TapIdOnKegs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611021242500_UpdateEntitiesAndModels.resx">
-      <DependentUpon>201611021242500_UpdateEntitiesAndModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611021311388_UpdateEntitiesAndModels2.resx">
-      <DependentUpon>201611021311388_UpdateEntitiesAndModels2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611021417285_UpdateKegData.resx">
-      <DependentUpon>201611021417285_UpdateKegData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611030131148_UpdateRecords.resx">
-      <DependentUpon>201611030131148_UpdateRecords.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611030213437_UpdateRecords2.resx">
-      <DependentUpon>201611030213437_UpdateRecords2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611040843569_AddFixEntities.resx">
-      <DependentUpon>201611040843569_AddFixEntities.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611080143041_PopulateTables.resx">
+      <DependentUpon>201611080143041_PopulateTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
