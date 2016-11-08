@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using DataAccess.Entities;
 
 namespace DataAccess.Migrations
@@ -12,7 +11,7 @@ namespace DataAccess.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(DataAccess.Context context)
