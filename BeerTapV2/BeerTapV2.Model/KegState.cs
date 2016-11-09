@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 namespace BeerTapV2.Model
 {
     public enum KegState
-    {
-        New,
+	{
+		None,
+		New,
         GoingDown,
         AlmostEmpty,
         Empty

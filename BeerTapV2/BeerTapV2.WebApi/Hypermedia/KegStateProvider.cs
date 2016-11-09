@@ -44,38 +44,9 @@ namespace BeerTapV2.WebApi.Hypermedia
                         KegState.Empty
                     }
                 }
-            };
+			};
         }
 
         public override IEnumerable<KegState> All { get; }
     }
-
-    //public class PlaceStateProvider : PlaceStateProvider<Place>
-    //{
-    //}
-    //public abstract class PlaceStateProvider<TPlaceResource> : ResourceStateProviderBase<TPlaceResource, PlaceState>
-    //where TPlaceResource : IStatefulResource<PlaceState>, IStatefulPlace
-    //{
-    //    public override PlaceState GetFor(TPlaceResource resource)
-    //    {
-    //        return resource.PlaceState;
-    //    }
-    //    protected override IDictionary<PlaceState, IEnumerable<PlaceState>> GetTransitions()
-    //    {
-    //        return new Dictionary<PlaceState, IEnumerable<PlaceState>>
-    //        {
-    //            // from, to
-    //            {
-    //                PlaceState.Created, new[]
-    //                {
-    //                    PlaceState.Full
-    //                }
-    //            },
-    //        };
-    //    }
-    //    public override IEnumerable<PlaceState> All
-    //    {
-    //        get { return EnumEx.GetValuesFor<PlaceState>(); }
-    //    }
-    //}
 }

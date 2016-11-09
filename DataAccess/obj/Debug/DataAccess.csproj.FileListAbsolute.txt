@@ -26,3 +26,4 @@ C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerT
 C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.PopulateTables.resources
 C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.RemovedKegEntitiy.resources
 C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.UpdateEntityTable_AddUnitOfMeasurement.resources
+C:\Users\Ronald.Marcelino.IQMETRIXHO\Documents\Visual Studio 2015\Projects\BeerTapV3\BeerTap\DataAccess\obj\Debug\DataAccess.Migrations.TestIfEnumNoneWillWork.resources

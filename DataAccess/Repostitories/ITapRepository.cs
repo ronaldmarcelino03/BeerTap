@@ -10,8 +10,10 @@ namespace DataAccess.Repostitories
     public interface ITapRepository
     {
         IEnumerable<Tap> GetTaps();
-        Tap GetTapById(int Id);
-        void Update(Tap tap);
+		IEnumerable<Tap> GetTapsByOfficeId(int officeId);
+		Tap GetTapById(int Id);
+	    Tap GetTapByOfficeAndTapIds(int officeId, int tapId);
+		void Update(Tap tap);
         void Save();
     }
 }

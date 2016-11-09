@@ -21,14 +21,24 @@ namespace DataAccess.Repostitories
         public IEnumerable<Tap> GetTaps()
         {
             return _context.Taps.AsEnumerable();
-        }
+		}
 
-        public Tap GetTapById(int id)
+		public IEnumerable<Tap> GetTapsByOfficeId(int officeId)
+		{
+			return _context.Taps.Where(c => c.OfficeId == officeId).Select(c => c);
+		}
+
+		public Tap GetTapById(int id)
         {
             return _context.Taps.FirstOrDefault(c => c.Id == id);
-        }
+		}
 
-        public void Update(Tap tap)
+		public Tap GetTapByOfficeAndTapIds(int officeId, int tapId)
+		{
+			return _context.Taps.FirstOrDefault(c => c.OfficeId == officeId && c.Id == tapId);
+		}
+
+		public void Update(Tap tap)
         {
             _context.Taps.AddOrUpdate(tap);
         }
@@ -56,5 +66,5 @@ namespace DataAccess.Repostitories
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-    }
+	}
 }

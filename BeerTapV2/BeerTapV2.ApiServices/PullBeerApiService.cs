@@ -31,31 +31,36 @@ namespace BeerTapV2.ApiServices
 			_requestContextExtractor.ExtractTapId<TapModel>(context);
 
 			// To be refactored/auto-mapped
+			var officeOption = context.UriParameters.GetByName<int>("officeId");
+			var officeId = officeOption.EnsureValue(() => context.CreateHttpResponseException<OfficeModel>("Cannot find tap identifier in the uri", HttpStatusCode.BadRequest));
 			var tapOption = context.UriParameters.GetByName<int>("tapId");
 			var tapId = tapOption.EnsureValue(() => context.CreateHttpResponseException<TapModel>("The tapId must be supplied in the URI", HttpStatusCode.BadRequest));
-			var tap = _tapRepository.GetTapById(tapId);
+			var tap = _tapRepository.GetTapByOfficeAndTapIds(officeId, tapId);
 
-			if (tap.KegState != KegState.Empty.ToString())
+			if (tap != null)
 			{
-				int volumePulled;
-				var newContent = GetNewContent(tap.Content, resource.Volume, out volumePulled);
-				var newKegState = GetKegState(newContent, tap.MaxContent);
-
-				// Update tap record
-				_tapRepository.Update(new Tap()
+				if (tap.KegState != KegState.Empty.ToString())
 				{
-					Id = tap.Id,
-					OfficeId = tap.OfficeId,
-					BeerName = tap.BeerName,
-					Content = newContent,
-					MaxContent = tap.MaxContent,
-					UnitOfMeasurement = tap.UnitOfMeasurement,
-					KegState = newKegState.ToString()
-				});
-				_tapRepository.Save();
+					int volumePulled;
+					var newContent = GetNewContent(tap.Content, resource.Volume, out volumePulled);
+					var newKegState = GetKegState(newContent, tap.MaxContent);
 
-				// Update resource before returning
-				resource.Volume = volumePulled;
+					// Update tap record
+					_tapRepository.Update(new Tap()
+					{
+						Id = tap.Id,
+						OfficeId = tap.OfficeId,
+						BeerName = tap.BeerName,
+						Content = newContent,
+						MaxContent = tap.MaxContent,
+						UnitOfMeasurement = tap.UnitOfMeasurement,
+						KegState = newKegState.ToString()
+					});
+					_tapRepository.Save();
+
+					// Update resource before returning
+					resource.Volume = volumePulled;
+				}
 			}
 
 			return Task.FromResult(new ResourceCreationResult<PullBeerModel, int>(resource));

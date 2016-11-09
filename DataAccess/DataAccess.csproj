@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201611080657430_UpdateEntityTable_AddUnitOfMeasurement.Designer.cs">
       <DependentUpon>201611080657430_UpdateEntityTable_AddUnitOfMeasurement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611080835471_TestIfEnumNoneWillWork.cs" />
+    <Compile Include="Migrations\201611080835471_TestIfEnumNoneWillWork.Designer.cs">
+      <DependentUpon>201611080835471_TestIfEnumNoneWillWork.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repostitories\IOfficeRepository.cs" />
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611080657430_UpdateEntityTable_AddUnitOfMeasurement.resx">
       <DependentUpon>201611080657430_UpdateEntityTable_AddUnitOfMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611080835471_TestIfEnumNoneWillWork.resx">
+      <DependentUpon>201611080835471_TestIfEnumNoneWillWork.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
