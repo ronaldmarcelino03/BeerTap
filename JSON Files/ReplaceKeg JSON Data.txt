@@ -1,8 +1,9 @@
 ReplaceKeg JSON Data
 
+// Replace keg w/o param as Tap ID is in the URL
+{}
+
+// Replace keg changing the beer name/type
 {
-	"Name": "Draft X",
-	"KegId": "1",
-	"TapId": "1",
-	"OfficeId": "1"
+	"BeerName": "Pale Pilsen"
 }

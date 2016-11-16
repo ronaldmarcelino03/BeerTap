@@ -195,9 +195,9 @@
     <Compile Include="TapApiService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\..\DataAccess\BeerTapV3DAL.csproj">
       <Project>{20d1cf43-5a93-4bd8-96f6-cd6e3b2060a5}</Project>
-      <Name>DataAccess</Name>
+      <Name>BeerTapV3DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\BeerTapV2.Model\BeerTapV3.Model.csproj">
       <Project>{F1BE99C5-041C-4366-9E74-0AD3632A8611}</Project>

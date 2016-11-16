@@ -340,9 +340,9 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\..\DataAccess\BeerTapV3DAL.csproj">
       <Project>{20D1CF43-5A93-4BD8-96F6-CD6E3B2060A5}</Project>
-      <Name>DataAccess</Name>
+      <Name>BeerTapV3DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\BeerTapV2.ApiServices\BeerTapV3.ApiServices.csproj">
       <Project>{006BC5D6-E8BF-40C9-9C9C-A55685624E43}</Project>

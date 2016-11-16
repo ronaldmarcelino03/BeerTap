@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerTapV3.WebApi", "BeerTap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerTapV3.IntegrationTests", "BeerTapV2\BeerTapV2.IntegrationTests\BeerTapV3.IntegrationTests.csproj", "{683A3444-B4FA-4FF2-8308-F3CAD3EC011A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{20D1CF43-5A93-4BD8-96F6-CD6E3B2060A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerTapV3DAL", "DataAccess\BeerTapV3DAL.csproj", "{20D1CF43-5A93-4BD8-96F6-CD6E3B2060A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerTapV3UI", "BeerTapV3UI\BeerTapV3UI.csproj", "{DAAA1D1C-3FB0-48D8-9BB0-9FA556C82434}"
 EndProject
